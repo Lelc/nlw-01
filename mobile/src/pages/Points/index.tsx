@@ -66,7 +66,7 @@ const Points = () => {
       if (status !== "granted") {
         Alert.alert(
           "Opa",
-          "precisamos de sua permição para obter sua localização"
+          "precisamos de sua permissão para obter sua localização"
         );
         return;
       }

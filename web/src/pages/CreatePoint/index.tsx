@@ -1,4 +1,10 @@
-import React, { useEffect, useState, ChangeEvent, FormEvent } from "react";
+import React, {
+  useEffect,
+  useState,
+  ChangeEvent,
+  FormEvent,
+  HtmlHTMLAttributes,
+} from "react";
 import { Link, useHistory } from "react-router-dom";
 import { FiArrowLeft } from "react-icons/fi";
 import { Map, TileLayer, Marker } from "react-leaflet";
@@ -189,6 +195,7 @@ const CreatePoint = () => {
               name="name"
               id="name"
               onChange={handleInputChange}
+              required
             />
           </div>
 
@@ -200,6 +207,7 @@ const CreatePoint = () => {
                 name="email"
                 id="email"
                 onChange={handleInputChange}
+                required
               />
             </div>
             <div className="field">
@@ -209,6 +217,7 @@ const CreatePoint = () => {
                 name="whatsapp"
                 id="whatsapp"
                 onChange={handleInputChange}
+                required
               />
             </div>
           </div>
