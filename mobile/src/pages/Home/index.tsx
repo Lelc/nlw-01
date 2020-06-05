@@ -79,6 +79,7 @@ const Home = () => {
 
     return (
       <RNPickerSelect
+        style={styles.input}
         placeholder={{ label: "escolha uma Cidade", value: null }}
         onValueChange={(value) => setSelectedCity(value)}
         value={selectedCity}

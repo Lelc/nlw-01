@@ -22,6 +22,7 @@ interface Params {
 interface Data {
   point: {
     image: string;
+    image_url: string;
     name: string;
     email: string;
     whatsapp: string;
@@ -71,12 +72,12 @@ const Detail = () => {
     <SafeAreaView style={{ flex: 1 }}>
       <View style={styles.container}>
         <TouchableOpacity onPress={handleNavigationBack}>
-          <Icon name="arrow-left" size={24} />
+          <Icon name="arrow-left" size={24} color="#34cb79" />
         </TouchableOpacity>
         <Image
           style={styles.pointImage}
           source={{
-            uri: data.point.image,
+            uri: data.point.image_url,
           }}
         />
         <Text style={styles.pointName}>{data.point.name}</Text>

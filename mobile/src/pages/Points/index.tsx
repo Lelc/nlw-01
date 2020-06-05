@@ -25,6 +25,7 @@ interface Item {
 interface Point {
   id: number;
   image: string;
+  image_url: string;
   name: string;
   latitude: number;
   longitude: number;
@@ -117,7 +118,7 @@ const Points = () => {
     <>
       <View style={styles.container}>
         <TouchableOpacity onPress={handleNavigationBack}>
-          <Icon name="arrow-left" size={24} />
+          <Icon name="arrow-left" size={24} color="#34cb79" />
         </TouchableOpacity>
 
         <Text style={styles.title}>Bem Vindo</Text>
@@ -151,7 +152,7 @@ const Points = () => {
                     <Image
                       style={styles.mapMarkerImage}
                       source={{
-                        uri: point.image,
+                        uri: point.image_url,
                       }}
                     />
                     <Text style={styles.mapMarkerTitle}>{point.name}</Text>
