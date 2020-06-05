@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Constants from "expo-constants";
 import { Feather as Icon } from "@expo/vector-icons";
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, useRoute } from "@react-navigation/native";
 import {
   StyleSheet,
   View,
@@ -30,8 +30,17 @@ interface Point {
   longitude: number;
 }
 
+interface Params {
+  uf: string;
+  city: string;
+}
+
 const Points = () => {
   const navigation = useNavigation();
+  const route = useRoute();
+
+  const routeParams = route.params as Params;
+
   const [items, setItems] = useState<Item[]>([]);
   const [points, setPoints] = useState<Point[]>([]);
   const [selectedItems, setSelectedItems] = useState<number[]>([]);
@@ -72,15 +81,15 @@ const Points = () => {
     api
       .get("points", {
         params: {
-          city: "Mafra",
-          uf: "SC",
-          items: [1],
+          city: routeParams.city,
+          uf: routeParams.uf,
+          items: selectedItems,
         },
       })
       .then((response) => {
         setPoints(response.data);
       });
-  }, []);
+  }, [selectedItems]);
 
   function handleNavigationBack() {
     navigation.goBack();
