@@ -1,6 +1,6 @@
 This project was developed with the following technologies:
 
-- Node.js]
+- Node.js
 - TypeScript
 - React
 - React Native
